@@ -58,6 +58,10 @@ class PrototypesController < ApplicationController
     params.require(:prototype).permit(:title, :catch_copy, :concept, :user,:id, :image).merge(user_id: current_user.id)
   end
 
+  def user_params
+    user.require(:user).permit(:name, :id).merge(user_id: current_user.id)
+  end
+
  
   
 
